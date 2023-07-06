@@ -1,0 +1,14 @@
+
+.n ul li{
+    list-style: none;
+    color: #087f5b;
+    font-size: 40px;
+    font-weight: 900;
+   
+}
+#t{
+    border-bottom: #087f5b solid 1px;
+}
+.n{
+    margin-top: 5%;
+}

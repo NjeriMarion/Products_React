@@ -1,0 +1,16 @@
+.nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%;
+    font-weight: 800;
+    font-size: 23px;
+    color: #dee2e6;  
+}
+.nav{
+    background-color: #087f5b;
+    padding: 1%;
+    padding: 6px 2% 1px 19%;
+}
+.nav ul li{
+    list-style: none;
+}
