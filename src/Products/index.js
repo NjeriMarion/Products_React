@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import './style.css'
+import { Link } from "react-router-dom";
 
 const Products=()=>{
     const [products,setProducts]=useState([])
@@ -29,7 +30,9 @@ return(
     <div className="prods">        
         {products.map(item => (
             <div key={item.id}>
+                <Link to={`/details ${item.id}`}>
                 <img src={item.thumbnail} alt={item.title} className="thumbnail" />
+                    </Link>
                 <h4>{item.title}</h4> 
                 <button id="cart">ADD TO CART</button>
             </div>

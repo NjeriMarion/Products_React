@@ -1,53 +1,36 @@
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-import React, { useState, useEffect } from "react";
-import "./style.css";
-const Details = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
+const ProductDetails = () => {
+  const {productId} = useParams();
+  const [product, setProduct] = useState(null);
+  
   useEffect(() => {
-    (async () => {
-      await getProducts();
-    })();
-  }, []);
-  console.log({ products });
-  const getProducts = async () => {
-    try {
-      setLoading(true);
-      const response = await fetch("https://dummyjson.com/products");
-      const result = await response.json();
-      setProducts(result.products);
-      setLoading(false);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-  const handleProductClick = (product) => {
-    setSelectedProduct(product);
-  };
-  if (loading) {
-    return <h2>Loading...</h2>;
+    const details = async () => {
+      try {
+        const response = await fetch(`https://dummyjson.com/product/${productId}`);
+        const data = await response.json();
+        setProduct(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    details();
+  }, [productId]);
+  if (!product) {
+    return <p>Loading ...</p>;
   }
-
   return (
     <div>
-      <h1 className="h1">Product Details</h1>
-      <div className="product-grid">
-        {products.map((item) => (
-          <div
-            key={item.id}
-            className="product-item"
-            onClick={() => handleProductClick(item)}
-          >
-            <div className="product-details">
-              <h2>{item.title}</h2>
-              <p>Price: {item.price}</p>
-              <p>Discount: {item.discountPercentage}%</p>
-            </div>
-          </div>
-        ))}
+      <h1>Product Details</h1>
+      <div>
+        <img src={product.thumbnail} alt={product.title} />
+        <h2>{product.title}</h2>
+        <p>{product.brand}</p>
+        <p>{product.price}</p>
+        <h4>{product.rating}</h4>
       </div>
     </div>
   );
 };
-export default Details;
+export default ProductDetails;

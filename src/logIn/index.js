@@ -1,5 +1,7 @@
 import React ,{useState} from 'react';
 import './style.css'
+import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 const Login = () => {
@@ -44,7 +46,9 @@ const Login = () => {
                 onChange={(a) =>{setPassword(a.target.value)}}/>
                 <br/>
                 <br/>
-                <button>Login</button>
+                <Link to={`/product`}>
+                <button type='submit'>Login</button>
+                    </Link>
             </form>
         </div>
     )
