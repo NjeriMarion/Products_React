@@ -3,10 +3,10 @@
     gap: 8%;
     flex-wrap: wrap;
     padding-left: 5%;
-    margin-top: 2%;
+    margin-top:5%;
     padding-right: 5%;
 }
-#cart{
+.btn-see{
     border: none;
     border-radius: 5px;
     background-color: #0ca678;
@@ -19,4 +19,13 @@
     max-width: 200px;
     height: 50%;
     border-radius: 20px;
+}
+.btn-add{
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    padding: -12px -18px;
+    color: #0ca678;
+    font-size: 25px;
+    font-weight: 600;
 }
