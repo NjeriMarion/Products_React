@@ -35,7 +35,7 @@ return(
                 <img src={item.thumbnail} alt={item.title} className="thumbnail" />
                     </Link>
                 <h4>{item.title}</h4> 
-                <Link to={`/ProductDetails/${item.id}` }className="btn"><button type="submit" className="btn-see">See More</button ></Link>
+                <Link to={`/ProductDetails/${item.id}` } key={item.id}><button type="submit" className="btn-see">See More</button ></Link>
             </div>
         ))}
     </div>

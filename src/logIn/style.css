@@ -13,7 +13,7 @@
     border:wheat solid 1px;
     border-radius: 5px;
 }
-.form > button{
+.login{
     border: none;
     border-radius: 5px;
     /* background-color: seagreen; */

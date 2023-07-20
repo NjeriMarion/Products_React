@@ -47,7 +47,7 @@ const Login = () => {
                 <br/>
                 <br/>
                 <Link to={`/product`}>
-                <button type='submit'>Login</button>
+                <button type='submit' className ='login'>Login</button>
                     </Link>
             </form>
         </div>
